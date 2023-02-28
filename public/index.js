@@ -10,15 +10,22 @@ const operations = {
   x: (num1, num2) => num1 * num2,
   '/': (num1, num2) => num1 / num2,
 };
-calculateButton.addEventListener('click', () => {
-  const num1 = Number(firstNumberElement.value.trim());
-  const num2 = Number(secondNumberElement.value.trim());
+calculateButton.addEventListener('click', async () => {
+  const firstNumber = Number(firstNumberElement.value.trim());
+  const secondNumber = Number(secondNumberElement.value.trim());
 
-  if (!Number.isInteger(num1) || !Number.isInteger(num2)) {
+  if (!Number.isInteger(firstNumber) || !Number.isInteger(secondNumber)) {
     resultField.value = '';
     return;
   }
-  const operation = operations[operatorElement.value];
-  const answer = operation(num1, num2);
-  resultField.value = answer;
+  const operator = operatorElement.value;
+  const data = JSON.stringify({firstNumber, secondNumber, operator})
+  const {result} = await fetch("/calculate",{
+    method: "post",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: data
+  }).then(response => response.json());
+  resultField.value = result;
 });
