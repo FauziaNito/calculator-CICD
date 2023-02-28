@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="group">
+        <h1>GROUP 3</h1>
+    </div>
+    
+    <div class="container">
+        <h1>Simple Calculator</h1>
+        <div class="boundary">
+        <div class="boundary-field">
+                <label for="firstnumber">First Number:</label>
+                <input type="text" name="firstnumber" id="firstnumber" autocomplete="off">
+            </div>
+            <div class="boundary-field">
+                <label for="secondnumber">Second Number:</label>
+                <input type="text" name="secondnumber" id="secondnumber" autocomplete="off">
+            </div>
+            
+            <div class="boundary-field">
+                <label for="operator">Operator</label>
+            <div class="equal">
+                    <select id="operator">
+                        <option value="+" selected>+</option>
+                        <option value="-">-</option>
+                        <option value="x">x</option>
+                        <option value="/">/</option>
+                    </select>
+                    <button type="button" id="calculate">Answer</button>
+                
+            </div>
+            
+            </div>
+            <div class="boundary-field">
+                <label for="result">Result:</label>
+                <input readonly="readonly" type="text" name="result" id="result" autocomplete="off">
+        </div>
+    </div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
