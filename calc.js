@@ -13,3 +13,10 @@ export function multiply(a, b) {
 export function divide(a, b) {
   return a / b;
 }
+
+export const operations = {
+  "+": add,
+  "-": subtract,
+  "x": multiply,
+  "/": divide
+};
